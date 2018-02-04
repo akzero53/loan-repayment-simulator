@@ -46,26 +46,33 @@ class Application extends React.Component {
     const { simulations, selectedSimulationIndex } = this.state
 
     return (
-      <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', width: '100%' }}>
-        <div>
-          {simulations.map((simulation, index) => {
-            return <div key = {'controller_' + index} style={{
-              backgroundColor: index === 0 ? 'rgba(100, 0,0,0.3)' : (index === 1 ? 'rgba(0,0,100,0.3' : 'rgba(0,100,0,0.3'),
-              margin: 8,
-            }}>
-              <Controller
-                selectedSimulation = {simulation}
-                setRate = {(value) => this._setRate(value, index)}
-                setLoan = {(value) => this._setLoan(value, index)}
-                setRepayment = {(value) => this._setRepayment(value, index)}
-                setMaxMonth = {(value) => this._setMaxMonth(value, index)}
-              />
-            </div>
-          })}
-        </div>
-        <RepaymentGraph
-          simulations = {simulations}
-        />
+      <div>
+        <section style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', width: '100%' }}>
+          <div>
+            {simulations.map((simulation, index) => {
+              return <div key = {'controller_' + index} style={{
+                backgroundColor: index === 0 ? 'rgba(100, 0,0,0.3)' : (index === 1 ? 'rgba(0,0,100,0.3' : 'rgba(0,100,0,0.3'),
+                margin: 8,
+              }}>
+                <Controller
+                  selectedSimulation = {simulation}
+                  setRate = {(value) => this._setRate(value, index)}
+                  setLoan = {(value) => this._setLoan(value, index)}
+                  setRepayment = {(value) => this._setRepayment(value, index)}
+                  setMaxMonth = {(value) => this._setMaxMonth(value, index)}
+                />
+              </div>
+            })}
+          </div>
+          <RepaymentGraph
+            simulations = {simulations}
+          />
+        </section>
+        <section style={{ fontSize: 12, color: '#666666' }}>
+          <p>注意</p>
+          <p>このシミュレータを使って起こったいかなる問題も、当サイトでは責任を負いません。</p>
+          <p>サイトの内容は予告なく更新されることがあります。</p>
+        </section>
       </div>
     )
   }

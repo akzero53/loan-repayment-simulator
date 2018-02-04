@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start:dev": "webpack-dev-server --config webpack.config.dev.js",
-    "package": "webpack -p --config webpack.config.prod.js --resolve-alias vue=\"vue/dist/vue.js\"",
+    "package": "webpack -p --config webpack.config.prod.js",
     "clean": "rm -rf dist/"
   },
   "author": "Eisuke Okuyama",
