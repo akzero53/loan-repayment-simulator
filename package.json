@@ -1,5 +1,9 @@
 {
-  "name": "repayment-simulator",
+  "name": "loan-repayment-simulator",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/akzero53/loan-repayment-simulator.git"
+  },
   "version": "0.1.0",
   "description": "ローン返済シミュレータ",
   "main": "index.js",
