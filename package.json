@@ -24,7 +24,7 @@
     "webpack-merge": "^4.1.1"
   },
   "scripts": {
-    "start:dev": "webpack-dev-server --config webpack.config.dev.js --resolve-alias vue=\"vue/dist/vue.js\"",
+    "start:dev": "webpack-dev-server --config webpack.config.dev.js",
     "package": "webpack -p --config webpack.config.prod.js --resolve-alias vue=\"vue/dist/vue.js\"",
     "clean": "rm -rf dist/"
   },
