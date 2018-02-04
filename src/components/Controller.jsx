@@ -46,18 +46,18 @@ export default class Controller extends React.Component {
   }
 
   _handleRateChange(event) {
-    if (this._isNumber(event) || event === '') this.props.setRate(event.target.value)
+    if (this._isNumber(event)) this.props.setRate(Number(event.target.value))
   }
 
   _handleLoanChange(event) {
-    if (this._isNumber(event) || event === '') this.props.setLoan(event.target.value)
+    if (this._isNumber(event)) this.props.setLoan(Number(event.target.value))
   }
 
   _handleRepaymentChange(event) {
-    if (this._isNumber(event) || event === '') this.props.setRepayment(event.target.value)
+    if (this._isNumber(event)) this.props.setRepayment(Number(event.target.value))
   }
 
   _handleMaxMonthChange(event) {
-    if (this._isNumber(event) || event === '') this.props.setMaxMonth(event.target.value)
+    if (this._isNumber(event)) this.props.setMaxMonth(Number(event.target.value))
   }
 }

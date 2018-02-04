@@ -9,6 +9,7 @@ export default class RepaymentGraph extends React.Component {
     super(props);
 
     this._ref = 'graph' + instances;
+    this._currentChart = null;
     instances++;
   }
 
@@ -29,6 +30,11 @@ export default class RepaymentGraph extends React.Component {
   }
 
   _renderGraph() {
+    if (this._currentChart) {
+      this._currentChart.destroy();
+      this._currentChart = null;
+    }
+
     const canvas = ReactDOM.findDOMNode(this.refs[this._ref]);
     const context2d = canvas.getContext('2d');
 
@@ -51,7 +57,7 @@ export default class RepaymentGraph extends React.Component {
     const labels = [];
     for (let i = 0; i < maxLength; i++) labels.push(i + 1);
 
-    new Chart(context2d, {
+    this._currentChart = new Chart(context2d, {
       type: 'line',
       data: {
         labels,
